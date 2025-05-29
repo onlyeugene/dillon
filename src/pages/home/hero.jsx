@@ -5,7 +5,7 @@ import home from "@/assets/images/home.png";
 const Hero = () => {
   const handleWhatsAppClick = () => {
     // Replace with your actual WhatsApp number
-    const phoneNumber = "1234567890"; // Add your WhatsApp number here
+    const phoneNumber = "+2347087701706"; // Add your WhatsApp number here
     const message = "Hello! I'm interested in your pet services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
@@ -14,7 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative bg-gray-200 pt-20" id="home">
+    <div className="relative bg-gray-200 dark:bg-gray-800 pt-20" id="home">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('/src/assets/pattern.png')] bg-repeat"></div>
@@ -24,11 +24,11 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8" data-aos="fade-right">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               A beautiful pet store, where all your pets needs are met.
             </h1>
             <p
-              className="text-xl text-gray-600 leading-relaxed"
+              className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
               data-aos="fade-right"
               data-aos-delay="100"
             >
@@ -51,7 +51,7 @@ const Hero = () => {
               </Link>
               <button
                 onClick={handleWhatsAppClick}
-                className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-colors duration-300 flex items-center gap-2"
+                className="px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white font-semibold rounded-lg hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 transition-colors duration-300 flex items-center gap-2"
               >
                 <svg
                   className="w-5 h-5"
@@ -72,9 +72,9 @@ const Hero = () => {
               data-aos-delay="300"
             >
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-yellow-500"
+                    className="w-6 h-6 text-yellow-500 dark:text-yellow-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -87,12 +87,14 @@ const Hero = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-gray-700">24/7 Care</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  24/7 Care
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-yellow-500"
+                    className="w-6 h-6 text-yellow-500 dark:text-yellow-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -105,7 +107,9 @@ const Hero = () => {
                     />
                   </svg>
                 </div>
-                <span className="text-gray-700">Expert Staff</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Expert Staff
+                </span>
               </div>
             </div>
           </div>
@@ -120,8 +124,8 @@ const Hero = () => {
               />
             </div>
             {/* Decorative Elements */}
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-500 rounded-full opacity-20"></div>
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-500 rounded-full opacity-20"></div>
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-500 dark:bg-yellow-600 rounded-full opacity-20"></div>
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-500 dark:bg-blue-600 rounded-full opacity-20"></div>
           </div>
         </div>
       </div>

@@ -10,43 +10,49 @@ import accessory1 from "@/assets/images/accesory/accesory.jpeg";
 
 const categories = [
   {
-    id: 1,
+    id: "all",
+    name: "All Products",
+    image: null,
+    description: "Browse all our products",
+  },
+  {
+    id: "Cages",
     name: "Cages",
     image: cage1,
     description: "High-quality pet cages and kennels for all sizes",
   },
   {
-    id: 2,
+    id: "Foods",
     name: "Foods",
     image: food1,
     description: "Premium pet food and treats",
   },
   {
-    id: 3,
+    id: "Boosters",
     name: "Boosters",
     image: booster1,
     description: "Vitamins and supplements for your pets",
   },
   {
-    id: 4,
+    id: "Accessories",
     name: "Accessories",
     image: accessory1,
     description: "Toys, beds, and other pet accessories",
   },
   {
-    id: 5,
+    id: "Medications",
     name: "Medications",
     image: medication1,
     description: "Pet medications and healthcare products",
   },
   {
-    id: 6,
+    id: "Chains",
     name: "Chains",
     image: chain1,
     description: "Leashes, collars, and chains",
   },
   {
-    id: 7,
+    id: "Plates",
     name: "Plates",
     image: plate1,
     description: "Food and water bowls for your pets",
@@ -54,55 +60,57 @@ const categories = [
 ];
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Cages");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  // Filter products based on selected category
-  const filteredProducts = products.filter(
-    (product) => product.category === selectedCategory
-  );
+  const filteredProducts =
+    selectedCategory === "all"
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
 
   return (
-    <div className="bg-gray-100 py-16">
+    <div className="bg-gray-50 dark:bg-gray-800 py-16" id="products">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center text-gray-900">
-          Our Products
-        </h1>
-        <div className="w-20 h-1 bg-yellow-500 mx-auto mt-3 mb-12" />
+        {/* Header */}
+        <div className="text-center mb-12" data-aos="fade-up">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Our Products
+          </h1>
+          <div className="w-20 h-1 bg-yellow-500 dark:bg-yellow-400 mx-auto mb-6" />
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Discover our wide range of high-quality pet products designed to
+            keep your furry friends happy and healthy.
+          </p>
+        </div>
 
-        {/* Category Selection - Horizontal Scroll on Mobile */}
-        <div className="relative">
-          <div className="flex overflow-x-auto pb-4 gap-4 md:grid md:grid-cols-3 lg:grid-cols-7">
+        {/* Categories */}
+        <div className="mb-12 overflow-x-auto">
+          <div className="flex space-x-4 min-w-max px-4">
             {categories.map((category) => (
               <button
                 key={category.id}
-                onClick={() => setSelectedCategory(category.name)}
-                className={`flex-shrink-0 w-32 md:w-auto p-4 rounded-lg transition-all duration-300 ${
-                  selectedCategory === category.name
-                    ? "bg-yellow-500 text-white shadow-lg transform scale-105"
-                    : "bg-white hover:bg-yellow-100 text-gray-800"
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                  selectedCategory === category.id
+                    ? "bg-yellow-500 dark:bg-yellow-400 text-white"
+                    : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600"
                 }`}
+                data-aos="fade-up"
+                data-aos-delay={categories.indexOf(category) * 100}
               >
-                <div className="flex flex-col items-center gap-2">
-                  <img
-                    src={category.image}
-                    alt={category.name}
-                    className="w-16 h-16 object-cover rounded-full"
-                  />
-                  <span className="font-semibold text-sm md:text-base">
-                    {category.name}
-                  </span>
-                </div>
+                {category.name}
               </button>
             ))}
           </div>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              data-aos="fade-up"
+              data-aos-delay={product.id * 100}
             >
               <div className="relative h-48">
                 <img
@@ -111,24 +119,23 @@ const Products = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 text-sm">{product.description}</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {product.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* No Products Message */}
+        {/* Empty State */}
         {filteredProducts.length === 0 && (
-          <div className="text-center py-12">
-            <h3 className="text-xl font-semibold text-gray-900">
-              No products found in this category
-            </h3>
-            <p className="text-gray-600 mt-2">
-              Please check back later or try another category
+          <div className="text-center py-12" data-aos="fade-up">
+            <p className="text-gray-600 dark:text-gray-300">
+              No products found in this category.
             </p>
           </div>
         )}

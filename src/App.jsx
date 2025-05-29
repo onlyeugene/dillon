@@ -10,6 +10,7 @@ import Contact from "./pages/home/contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Home from "./pages/home";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   useEffect(() => {
@@ -21,17 +22,16 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home />
-          }
-        />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </div>
+    </ThemeProvider>
   );
 }
 

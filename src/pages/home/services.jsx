@@ -81,15 +81,15 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="bg-gray-50 py-16" id="services">
+    <div className="bg-gray-50 dark:bg-gray-800 py-16" id="services">
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Our Professional Services
           </h1>
-          <div className="w-20 h-1 bg-yellow-500 mx-auto mb-6" />
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-yellow-500 dark:bg-yellow-400 mx-auto mb-6" />
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             We provide comprehensive pet care services to ensure your furry
             friends receive the best care possible. Our team of experienced
             professionals is dedicated to making your pets happy and healthy.
@@ -101,21 +101,26 @@ const Services = () => {
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               data-aos="fade-up"
               data-aos-delay={service.id * 100}
             >
               <div className="p-6">
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {service.description}
+                </p>
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-gray-700">
+                    <li
+                      key={index}
+                      className="flex items-center text-gray-700 dark:text-gray-300"
+                    >
                       <svg
-                        className="w-4 h-4 text-yellow-500 mr-2"
+                        className="w-4 h-4 text-yellow-500 dark:text-yellow-400 mr-2"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -138,14 +143,14 @@ const Services = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center" data-aos="fade-up">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             Ready to Give Your Pet the Best Care?
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             Contact us today to schedule an appointment or learn more about our
             services.
           </p>
-          <button className="bg-yellow-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300">
+          <button className="bg-yellow-500 dark:bg-yellow-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-yellow-600 dark:hover:bg-yellow-500 transition-colors duration-300">
             Book Now
           </button>
         </div>

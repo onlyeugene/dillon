@@ -2,8 +2,7 @@ import React from "react";
 
 const Contact = () => {
   const handleWhatsAppClick = () => {
-    // Replace with your actual WhatsApp number
-    const phoneNumber = "1234567890"; // Add your WhatsApp number here
+    const phoneNumber = "+2347087701706";
     const message = "Hello! I'm interested in your pet services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
@@ -12,13 +11,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-16" id="contact">
+    <div className="bg-gray-50 dark:bg-gray-800 py-16" id="contact">
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
-          <div className="w-20 h-1 bg-yellow-500 mx-auto mb-6" />
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-16" data-aos="fade-up">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Contact Us
+          </h1>
+          <div className="w-20 h-1 bg-yellow-500 dark:bg-yellow-400 mx-auto mb-6" />
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Have questions about our services? We're here to help! Reach out to
             us through WhatsApp or visit our store.
           </p>
@@ -26,19 +27,24 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Contact Information */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+          <div
+            className="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8"
+            data-aos="fade-right"
+          >
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
               Get in Touch
             </h2>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="text-2xl">📍</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                  <p className="text-gray-600">
-                    123 Pet Street
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                    Address
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Ife-Ilesa Expressway,
                     <br />
-                    Pet City, PC 12345
+                    Ife, Osun, Nigeria
                   </p>
                 </div>
               </div>
@@ -46,10 +52,10 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <div className="text-2xl">⏰</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                     Business Hours
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     Monday - Friday: 9:00 AM - 8:00 PM
                     <br />
                     Saturday: 9:00 AM - 6:00 PM
@@ -62,29 +68,40 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <div className="text-2xl">📞</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                  <p className="text-gray-600">+1 (123) 456-7890</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                    Phone
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    +234 708 770 1706
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
                 <div className="text-2xl">✉️</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600">info@dillonpetstore.com</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                    Email
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    dillonpetkennelandstore@gmail.com
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* WhatsApp Contact */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div
+            className="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8"
+            data-aos="fade-left"
+          >
             <div className="text-center">
               <div className="text-6xl mb-6">💬</div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
                 Chat with Us on WhatsApp
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 dark:text-gray-300 mb-8">
                 Get quick responses to your questions and inquiries through
                 WhatsApp. Our team is ready to assist you!
               </p>
