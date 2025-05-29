@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+@import "tailwindcss";
+
+
+
+body {
+  background-color: #000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  @apply w-11/12 mx-auto md:px-4 px-2 md:py-4 py-2;
+}
