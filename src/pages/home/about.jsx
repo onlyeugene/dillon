@@ -12,7 +12,7 @@ const About = () => {
     <div className="bg-gray-50 py-16" id="about">
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             About Dillon Pet-Store & Kennel
           </h1>
@@ -25,7 +25,7 @@ const About = () => {
 
         {/* Company Overview */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+          <div data-aos="fade-right">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Our Story
             </h2>
@@ -42,11 +42,13 @@ const About = () => {
               supplies to professional grooming and veterinary services.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
             {stats.map((stat, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-xl shadow-lg text-center"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <h3 className="text-3xl font-bold text-yellow-500 mb-2">
                   {stat.number}
@@ -58,12 +60,16 @@ const About = () => {
         </div>
 
         {/* Mission & Values */}
-        <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="bg-white rounded-xl shadow-lg p-8" data-aos="fade-up">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
             Our Mission & Values
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div className="text-4xl mb-4">❤️</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Compassion
@@ -73,7 +79,11 @@ const About = () => {
                 unique needs and personalities.
               </p>
             </div>
-            <div className="text-center">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div className="text-4xl mb-4">⭐</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Excellence
@@ -83,7 +93,11 @@ const About = () => {
                 services.
               </p>
             </div>
-            <div className="text-center">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <div className="text-4xl mb-4">🤝</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 Trust

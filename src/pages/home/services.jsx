@@ -81,11 +81,10 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="bg-gray-50 py-16"
-    id="services">
+    <div className="bg-gray-50 py-16" id="services">
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Our Professional Services
           </h1>
@@ -103,6 +102,8 @@ const Services = () => {
             <div
               key={service.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              data-aos="fade-up"
+              data-aos-delay={service.id * 100}
             >
               <div className="p-6">
                 <div className="text-4xl mb-4">{service.icon}</div>
@@ -136,7 +137,7 @@ const Services = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center" data-aos="fade-up">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Ready to Give Your Pet the Best Care?
           </h2>

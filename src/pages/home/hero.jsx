@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import home from "@/assets/images/home.png";
 
 const Hero = () => {
   const handleWhatsAppClick = () => {
@@ -22,18 +23,26 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8" data-aos="fade-right">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
               A beautiful pet store, where all your pets needs are met.
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p
+              className="text-xl text-gray-600 leading-relaxed"
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
               Professional pet care services, premium pet supplies, and a loving
               environment for your furry friends. Trust us to provide the best
               care for your beloved pets.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
+            <div
+              className="flex flex-wrap gap-4"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <Link
                 to="#services"
                 className="px-8 py-3 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-colors duration-300"
@@ -57,7 +66,11 @@ const Hero = () => {
             </div>
 
             {/* Features */}
-            <div className="grid grid-cols-2 gap-4 pt-8">
+            <div
+              className="grid grid-cols-2 gap-4 pt-8"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
                   <svg
@@ -98,10 +111,10 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative">
+          <div className="relative" data-aos="fade-left">
             <div className="relative z-10">
               <img
-                src="/src/assets/hero-pets.png"
+                src={home}
                 alt="Happy pets"
                 className="rounded-2xl shadow-2xl"
               />
