@@ -1,47 +1,54 @@
 import React, { useState } from "react";
 import { products } from "@/constants/data";
+import cage1 from "@/assets/images/cages/cage1.jpeg";
+import food1 from "@/assets/images/food/food1.jpeg";
+import booster1 from "@/assets/images/booster/booster1.jpeg";
+import medication1 from "@/assets/images/medication/medication1.jpeg";
+import chain1 from "@/assets/images/chain/chain1.jpeg";
+import plate1 from "@/assets/images/plates/plates1.jpeg";
+import accessory1 from "@/assets/images/accesory/accesory.jpeg";
 
 const categories = [
   {
     id: 1,
     name: "Cages",
-    image: "/src/assets/images/cages/cage1.jpeg",
+    image: cage1,
     description: "High-quality pet cages and kennels for all sizes",
   },
   {
     id: 2,
     name: "Foods",
-    image: "/src/assets/images/food/food1.jpeg",
+    image: food1,
     description: "Premium pet food and treats",
   },
   {
     id: 3,
     name: "Boosters",
-    image: "/src/assets/images/booster/booster1.jpeg",
+    image: booster1,
     description: "Vitamins and supplements for your pets",
   },
   {
     id: 4,
     name: "Accessories",
-    image: "/src/assets/images/accesory/accesory.jpeg",
+    image: accessory1,
     description: "Toys, beds, and other pet accessories",
   },
   {
     id: 5,
     name: "Medications",
-    image: "/src/assets/images/medication/medication1.jpeg",
+    image: medication1,
     description: "Pet medications and healthcare products",
   },
   {
     id: 6,
     name: "Chains",
-    image: "/src/assets/images/chain/chain1.jpeg",
+    image: chain1,
     description: "Leashes, collars, and chains",
   },
   {
     id: 7,
     name: "Plates",
-    image: "/src/assets/images/plates/plates1.jpeg",
+    image: plate1,
     description: "Food and water bowls for your pets",
   },
 ];

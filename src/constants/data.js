@@ -89,19 +89,19 @@ import plate6 from "@/assets/images/plates/plates6.jpeg";
 export const navLinks = [
   {
     name: "Home",
-    path: "#home",
+    href: "#home",
   },
   {
     name: "About",
-    path: "#about",
+    href: "#about",
   },
   {
     name: "Contact",
-    path: "#contact",
+    href: "#contact",
   },
   {
     name: "Services",
-    path: "#services",
+    href: "#services",
   },
 ];
 
